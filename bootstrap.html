@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap Avanzado</title>
+  <!-- Primero añadimos jQuery pues estas funciones de Bootstrap lo usarán -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Agregamos estilos personalizados -->
+  <style type="text/css">
+    body {
+      margin-bottom: 100px;
+    }
+    .margin-top {
+      margin-top: 50px;
+    }
+    .jumbotron {
+      background-color: #1f8dd3;
+    }
+    .white {
+      color: white !important;
+    }
+    .yellow {
+      color: #ffc842;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bootstrap Avanzado -->
+  <div class="container-fluid text-center">
+
+    <!-- Menú principal con jumbotron y list-group -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron margin-top">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="white">Bienvenido a Bootstrap Avanzado</h1>
+              <i class="glyphicon glyphicon-heart white" style="font-size:50px;"></i>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <h3 class="white">Vamos a revisar las siguientes funcionalidades:</h3>
+              <div class="list-group margin-top">
+                <a class="list-group-item bold" href="#div-modal">Modals</a>
+                <a class="list-group-item bold" href="#div-tooltips">Tooltips</a>
+                <a class="list-group-item bold" href="#div-dropdown">Dropdown</a>
+                <a class="list-group-item bold" href="#div-toggleable">Toggleable Tabs & Pills</a>
+                <a class="list-group-item bold" href="#div-popover">Popover</a>
+                <a class="list-group-item bold" href="#div-js">Funciones de JS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explicación Modal -->
+    <div class="row margin-top" id="div-modal">
+      <br>
+      <h2 class="yellow bold">Modal</h2>
+      <p>Son los pop-ups que algunas páginas muestran al realizar alguna acción</p>
+      <br>
+      <!-- Botón que activa el Modal -->
+      <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Da click aquí para ver un ejemplo</button>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="myModal">Título del Modal</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Aquí vamos a poner el contenido del modal, a manera de incepción este es el código de este modal.</h4>
+            <br><br>
+            <div class="well text-left">
+              <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#code-modal">Ver código completo</button>
+              <code id="code-modal" class="collapse" >
+                <br><br>
+                &lt!-- Botón que activa el Modal --&gt <br><br>
+                &ltbutton class="btn btn-primary" data-toggle="modal" data-target="#myModal"&gtDa click aquí para ver un ejemplo&lt/button&gt <br>
+                <br><br>
+                &lt!-- Modal --&gt <br><br>
+                &ltdiv class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt <br>
+                  &nbsp;&nbsp;&ltdiv class="modal-dialog" role="document"&gt <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="modal-content"&gt <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="modal-header"&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lth5 class="modal-title" id="myModal"&gtTítulo del Modal&lt/h5&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltbutton type="button" class="close" data-dismiss="modal" aria-label="Cerrar"&gt&lt/button&gt <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="modal-body"&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lth4&gtAquí vamos a poner el contenido del modal, a manera de incepción este es el código de este modal.&lt/h4&gt <br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt!-- Aquí va el contenido --&gt <br>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltdiv class="modal-footer"&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ltbutton type="button" class="btn btn-secondary" data-dismiss="modal"&gtClose&lt/button&gt <br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+                  &nbsp;&nbsp;&lt/div&gt <br>
+                &lt/div&gt <br>
+              </code>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    <!-- Explicación Tooltips -->
+    <div class="row margin-top" id="div-tooltips">
+      <br>
+      <h2 class="yellow bold">Tooltip</h2>
+      <p>Es un pequeño pop-up que aparece cuando el usuario se mueve encima de un elemento</p>
+      <br>
+      <!-- Este es el botón que tiene el tooltip activado -->
+      <a class="btn btn-primary" href="#div-tooltips" data-toggle="tooltip" title="¡Yo soy un Tooltip de Bootstrap!">Deja el puntero de tu mouse aquí para ver el ejemplo</a>
+      <br><br>
+      <br><br>
+      <div class="well col-md-6 col-md-offset-3 text-left">
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#code-tooltips">Ver código completo</button>
+        <code id="code-tooltips" class="collapse" >
+          <br>
+          &lta href="#" data-toggle="tooltip" title="Hooray!"&gtHover over me&lt/a&gt
+          <br>
+        </code>
+      </div>
+    </div>
+
+    <!-- Explicación Dropdowns -->
+    <div class="row margin-top" id="div-dropdown">
+      <br>
+      <h2 class="yellow bold">Dropdown</h2>
+      <p>Es un botón que despliega más opciones en un menú, se utiliza principalmente para navegación </p>
+      <br>
+      <!-- Este es el dropdown que redirige a las secciones de esta página -->
+      <div class="dropdown col-md-4 col-md-offset-4">
+        <!-- Este botón despliega las opciones -->
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Da click al botón y a las opciones para navegar en esta página
+          <!-- Esta clase "caret" muestra el símbolo del triangulo -->
+          <span class="caret"></span>
+        </button>
+        <!-- Estas son las opciones, dentro de un ul, y con links dentro de cada elemento li -->
+        <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenu">
+          <li><a href="#div-modal">Modals</a></li>
+          <li><a href="#div-tooltips">Tooltips</a></li>
+          <li class="disabled"><a href="#div-dropdown">Dropdown</a></li>
+          <li><a href="#div-togglable">Togglable tabs</a></li>
+          <li><a href="#div-popover">Popover</a></li>
+          <!-- Este divisor es opcional   -->
+          <li role="separator" class="divider"></li>
+          <li><a href="#div-js">Funciones de JS</a></li>
+        </ul>
+      </div>
+      <br><br><br>
+      <div class="well col-md-6 col-md-offset-3 text-left">
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#code-dropdown">Ver código completo</button>
+        <code id="code-dropdown" class="collapse" >
+          <br>
+          &nbsp;&lt!-- Este es el dropdown que redirige a las secciones de esta página --&gt <br><br>
+          &nbsp;&ltdiv class="dropdown col-md-4 col-md-offset-4"&gt <br>
+            &nbsp;&nbsp;&lt!-- Este botón despliega las opciones --&gt <br>
+            &nbsp;&nbsp;&ltbutton class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"&gt <br>
+              &nbsp;&nbsp;&nbsp;Da click al botón y a las opciones para navegar en esta página <br>
+              &nbsp;&nbsp;&nbsp;&lt!-- Esta clase "caret" muestra el símbolo del triangulo --&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltspan class="caret"&gt&lt/span&gt <br>
+            &nbsp;&nbsp;&lt/button&gt <br><br>
+            &nbsp;&nbsp;&lt!-- Estas son las opciones, dentro de un ul, y con links dentro de cada elemento li --&gt <br>
+            &nbsp;&nbsp;&ltul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenu"&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta href="#div-modal"&gtModals&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta href="#div-tooltips"&gtTooltips&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli class="disabled"&gt&lta href="#div-dropdown"&gtDropdown&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta href="#div-togglable"&gtTogglable tabs&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta href="#div-popover"&gtPopover&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt!-- Este divisor es opcional   --&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli role="separator" class="divider"&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta href="#div-js"&gtFunciones de JS&lt/a&gt&lt/li&gt <br>
+            &nbsp;&nbsp;&lt/ul&gt <br>
+          &nbsp;&lt/div&gt <br>
+        </code>
+      </div>
+    </div>
+
+    <!-- Explicación Toggleable -->
+    <div class="row margin-top" id="div-toggleable">
+      <br>
+      <h2 class="yellow bold">Toggleable Tabs & Pills</h2>
+      Most web pages have some kind of a menu.
+      <p>La mayoría de las páginas tienen algún tipo de menú en tabs o botones para navegar por la página o mostrar y ocultar diferentes partes de la misma</p>
+      <br>
+      <p>Vamos a ver como podemos lograrlo con Tabs (pestañas) y Pills (botones de navegación)</p>
+      <br><br>
+      <!-- Este es el ejemplo para tabs -->
+      <div class="dropdown col-md-4 col-md-offset-4">
+        <h3>Tabs</h3>
+        <br>
+        <!-- Se definen las pestañas dentro de una lista -->
+        <ul class="nav nav-tabs">
+          <!-- Marcamos la primera pestaña como activa por default -->
+          <li class="active"><a data-toggle="tab" href="#tab1">Primera</a></li>
+          <li><a data-toggle="tab" href="#tab2">Segunda</a></li>
+          <li><a data-toggle="tab" href="#tab3">Tercera</a></li>
+        </ul>
+        <!-- Definimos el contenido de cada una de las pestañas -->
+        <div class="tab-content well">
+          <div id="tab1" class="tab-pane fade in active">
+            <h3>Primera pestaña</h3>
+            <p>Yo soy el contenido de la primera pestaña, siempre apareceré como activo al iniciar.</p>
+          </div>
+          <div id="tab2" class="tab-pane fade">
+            <h3>Segunda pestaña</h3>
+            <p>Yo soy el contenido de la segunda pestaña</p>
+          </div>
+          <div id="tab3" class="tab-pane fade">
+            <h3>Tercera pestaña</h3>
+            <p>Yo soy el contenido de la tercera pestaña</p>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <!-- Este es el ejemplo para pills -->
+      <div class="dropdown col-md-4 col-md-offset-4">
+        <h3>Pills</h3>
+        <br>
+        <!-- Se definen las pestañas dentro de una lista -->
+        <ul class="nav nav-pills">
+          <!-- Marcamos la primera pestaña como activa por default -->
+          <li class="active"><a data-toggle="pill" href="#pill1">Primera</a></li>
+          <li><a data-toggle="tab" href="#pill2">Segunda</a></li>
+          <li><a data-toggle="tab" href="#pill3">Tercera</a></li>
+        </ul>
+        <br>
+        <!-- Definimos el contenido de cada una de las pestañas -->
+        <div class="tab-content well">
+          <div id="pill1" class="tab-pane fade in active">
+            <h3>Primera pestaña</h3>
+            <p>Yo soy el contenido de la primera pestaña, siempre apareceré como activo al iniciar.</p>
+          </div>
+          <div id="pill2" class="tab-pane fade">
+            <h3>Segunda pestaña</h3>
+            <p>Yo soy el contenido de la segunda pestaña</p>
+          </div>
+          <div id="pill3" class="tab-pane fade">
+            <h3>Tercera pestaña</h3>
+            <p>Yo soy el contenido de la tercera pestaña</p>
+          </div>
+        </div>
+      </div>
+      <br><br><br>
+      <div class="well col-md-6 col-md-offset-3 text-left">
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#code-togglable">Ver código completo</button>
+        <code id="code-togglable" class="collapse" >
+          &nbsp;&lt!-- Este es el ejemplo para tabs --&gt <br>
+          &nbsp;&ltdiv class="dropdown col-md-4 col-md-offset-4"&gt <br>
+            &nbsp;&nbsp;&lth3&gtTabs&lt/h3&gt <br>
+            &nbsp;&nbsp;&ltbr&gt <br>
+            &nbsp;&nbsp;&lt!-- Se definen las pestañas dentro de una lista --&gt <br>
+            &nbsp;&nbsp;&ltul class="nav nav-tabs"&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt!-- Marcamos la primera pestaña como activa por default --&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli class="active"&gt&lta data-toggle="tab" href="#tab1"&gtPrimera&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta data-toggle="tab" href="#tab2"&gtSegunda&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta data-toggle="tab" href="#tab3"&gtTercera&lt/a&gt&lt/li&gt <br>
+            &nbsp;&nbsp;&lt/ul&gt <br>
+            &nbsp;&nbsp;&lt!-- Definimos el contenido de cada una de las pestañas --&gt <br>
+            &nbsp;&nbsp;&ltdiv class="tab-content well"&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="tab1" class="tab-pane fade in active"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtPrimera pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la primera pestaña, siempre apareceré como activo al iniciar.&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="tab2" class="tab-pane fade"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtSegunda pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la segunda pestaña&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="tab3" class="tab-pane fade"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtTercera pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la tercera pestaña&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+            &nbsp;&nbsp;&lt/div&gt <br>
+          &nbsp;&lt/div&gt <br>
+          &nbsp;&ltbr&gt&ltbr&gt <br>
+          &nbsp;<br><br>
+          &nbsp;&lt!-- Este es el ejemplo para pills --&gt <br>
+          &nbsp;&ltdiv class="dropdown col-md-4 col-md-offset-4"&gt <br>
+            &nbsp;&nbsp;&lth3&gtPills&lt/h3&gt <br>
+            &nbsp;&nbsp;&ltbr&gt <br>
+            &nbsp;&nbsp;&lt!-- Se definen las pestañas dentro de una lista --&gt <br>
+            &nbsp;&nbsp;&ltul class="nav nav-pills"&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt!-- Marcamos la primera pestaña como activa por default --&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli class="active"&gt&lta data-toggle="pill" href="#pill1"&gtPrimera&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta data-toggle="tab" href="#pill2"&gtSegunda&lt/a&gt&lt/li&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltli&gt&lta data-toggle="tab" href="#pill3"&gtTercera&lt/a&gt&lt/li&gt <br>
+            &nbsp;&nbsp;&lt/ul&gt <br>
+            &nbsp;&nbsp;&ltbr&gt <br>
+            &nbsp;&nbsp;&lt!-- Definimos el contenido de cada una de las pestañas --&gt <br>
+            &nbsp;&nbsp;&ltdiv class="tab-content well"&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="pill1" class="tab-pane fade in active"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtPrimera pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la primera pestaña, siempre apareceré como activo al iniciar.&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="pill2" class="tab-pane fade"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtSegunda pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la segunda pestaña&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+              &nbsp;&nbsp;&nbsp;&ltdiv id="pill3" class="tab-pane fade"&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lth3&gtTercera pestaña&lt/h3&gt <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&ltp&gtYo soy el contenido de la tercera pestaña&lt/p&gt <br>
+              &nbsp;&nbsp;&nbsp;&lt/div&gt <br>
+            &nbsp;&nbsp;&lt/div&gt <br>
+          &nbsp;&lt/div&gt <br>
+          &nbsp;&ltbr&gt&ltbr&gt <br>
+        </code>
+      </div>
+    </div>
+
+    <!-- Explicación Popover -->
+    <div class="row margin-top" id="div-popover">
+      <br>
+      <h2 class="yellow bold">Popover</h2>
+      <p>Se puede entender como un pop-up más avanzado que el tooltip que utilizamos para mostrar información cuando el usuario da click a un elemento</p>
+      <br>
+      <!-- Este es el botón que activa el popover, usamos un id y el campo data-toggle para luego leerlo con jQuery -->
+      <a tabindex="0" id="popover" class="btn btn-lg btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Ejemplo de popover" data-content="Yo soy un popover y desaparezco cuando haces click en cualquier otro lugar">Dame click para ver un popover</a>
+      <br><br>
+      <div class="well col-md-6 col-md-offset-3 text-left">
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#code-popover">Ver código completo</button>
+        <code id="code-popover" class="collapse" >
+          &lt!-- Este es el botón que activa el popover, usamos un id y el campo data-toggle para luego leerlo con jQuery --&gt <br><br>
+          &lt!-- el campo 'data-placement' indica donde aparecerá, 'title' el título del mismo y 'data-content' el contenido a mostrar --&gt <br><br>
+          &lta tabindex="0" id="popover" class="btn btn-lg btn-primary" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="Ejemplo de popover" data-content="Yo soy un popover y desaparezco cuando haces click en cualquier otro lugar"&gtDame click para ver un popover&lt/a&gt
+          <br>
+        </code>
+      </div>
+    </div>
+
+    <!-- Explicación Funciones JS -->
+    <div class="row margin-top" id="div-js">
+      <br>
+      <h2 class="yellow bold">Funciones de Bootstrap con JS</h2>
+      <p>Te invito a explorar más funciones que combinan Bootstrap con jQuery y JS, la documentación es muy completa y lograrás entender como aplicarlos en tus proyectos facilmente</p>
+      <br>
+      <a class="btn btn-info btn-block btn-lg" href="http://getbootstrap.com/javascript/">Documentación de Bootstrap-JS</a>
+      <br><br>
+      <p>Durante todo el contenido de esta página utilizamos la función Collapse que nos permitió hacer más dinámicas las secciones con código extenso, este tipo de funcionalidad es la que tú tienes que buscar implementar en tu aplicación para mejorar la experiencia del usuario, combinar estas interacciones con la experiencia es lo que nos permite conformar el UX/UI de tus proyectos.</p>
+      <br><br>
+      <!-- Este es el div que mostraremos y ocultaremos, por default está escondido al inicio -->
+      <div class="well col-md-6 col-md-offset-3 text-left">
+        <!-- Este es el botón que activa y desactiva el elemento a colapsar -->
+        <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#demo">Así funciona el método collapse</button>
+        <code id="demo" class="collapse" >
+          <br>
+          &nbsp;&lt!-- Este es el botón que activa y desactiva el elemento a colapsar --&gt <br>
+          &nbsp;&ltbutton class="btn" data-toggle="collapse" data-target="#demo"&gtCollapsible&lt/button&gt <br><br>
+          &nbsp;&lt!-- Este es el div que mostraremos y ocultaremos, por default está escondido al inicio --&gt <br>
+          &nbsp;&ltdiv class="well"&gt <br>
+            &nbsp;&nbsp;Yo soy un texto con código oculto para tu comodidad, y así me generan: <br>
+            &nbsp;&nbsp;&ltcode id="demo" class="collapse" &gt <br>
+            &nbsp;&nbsp;&nbsp;Contenido...<br>
+            &nbsp;&nbsp;&lt/code&gt <br>
+          &nbsp;&lt/div&gt <br><br>
+          &nbsp;&lt!-- Esta función, y muchas otras, también necesitan agregar código de JS antes de cerrar la etiqueta body, la función que usamos para ocultar todos los '.collapse' al inicio es la siguiente: --&gt  <br><br>
+          &nbsp;&nbsp;&ltscript type="text/javascript"&gt <br>
+            &nbsp;&nbsp;&nbsp;// Estas funciones las ejecutamos cuando carga nuestra aplicación <br>
+            &nbsp;&nbsp;&nbsp;$(function() { <br><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;// Usamos la clase junto a la función collapse para mejorar tu experiencia <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('.collapse').collapse('hide'); <br><br>
+            &nbsp;&nbsp;&nbsp;}); <br>
+          &nbsp;&nbsp;&lt/script&gt <br>
+          <br><br>
+        </code>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script type="text/javascript">
+    // Estas funciones las ejecutamos cuando carga nuestra aplicación
+    $(function() {
+
+      // Usamos la clase junto a la función collapse para mejorar tu experiencia
+      $('.collapse').collapse('hide');
+
+      // Cuando hay un click en el link con id #popover mostramos el popover asociado
+      $('#popover').popover({
+        trigger: 'focus'
+      });
+
+    });
+  </script>
+
+
+
+</body>
+</html>
